@@ -1,17 +1,18 @@
 import numpy as np
 import face_recognition as fr
 import cv2
+import pyttsx3
 
 video_capture = cv2.VideoCapture(0)
 
-bruno_image = fr.load_image_file("myself.jpg")
-mam_image = fr.load_image_file("madam1.jpg")
+myImage = fr.load_image_file("myself.jpg")
+mamImage = fr.load_image_file("madam1.jpg")
 
-bruno_face_encoding = fr.face_encodings(bruno_image)[0]
-mam_face_encoding = fr.face_encodings(mam_image)[0]
+myFaceEncodings = fr.face_encodings(myImage)[0]
+mamFaceEncodings = fr.face_encodings(mamImage)[0]
 
 
-known_face_encondings = [bruno_face_encoding,mam_face_encoding]
+known_face_encondings = [myFaceEncodings,mamFaceEncodings]
 known_face_names = ["Bargav","Correspondent mam"]
 
 while True: 
@@ -33,7 +34,23 @@ while True:
         best_match_index = np.argmin(face_distances)
         if matches[best_match_index]:
             name = known_face_names[best_match_index]
-        
+
+            engine = pyttsx3.init()
+            voices = engine.getProperty('voices')
+            engine.setProperty('voice', voices[2].id)
+            if name != "Correspondent mam":
+                
+                engine.say(f"hi {name}")
+                engine.runAndWait()
+            elif name == 'Correspondent mam':
+                
+                engine.say("namaste mam")
+                engine.runAndWait()
+
+            elif name=="Unknown":
+                
+                engine.say("face unknown")
+                engine.runAndWait()
         cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
 
         cv2.rectangle(frame, (left, bottom -35), (right, bottom), (0, 0, 255), cv2.FILLED)

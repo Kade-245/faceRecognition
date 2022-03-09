@@ -13,7 +13,7 @@ win.geometry("700x700")
 # Create a Label to capture the Video frames
 label =Label(win)
 cam= cv2.VideoCapture(0)
-
+label.grid(column=0,row=0)
 #training stuff
 my_image = fr.load_image_file("myself.jpg")
 mam_image = fr.load_image_file("madam1.jpg")
@@ -38,8 +38,8 @@ def show_frames():
 
 def capture():
     frame = cam.read()
-    rgb_frame = frame[:, :, ::-1]
-
+    rgb_frame = frame[::-1]
+    
     face_locations = fr.face_locations(rgb_frame)
     face_encodings = fr.face_encodings(rgb_frame, face_locations)
 
@@ -62,8 +62,8 @@ def capture():
         cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
 
-cpt = Button(win , text="Capture" , command=capture)
-cpt.pack()
+cpt = Button(win , text="Capture" , command=capture, )
+cpt.grid(column=0,row=2)
 
 show_frames()
 win.mainloop()
