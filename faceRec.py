@@ -7,13 +7,37 @@ video_capture = cv2.VideoCapture(0)
 
 myImage = fr.load_image_file("myself.jpg")
 mamImage = fr.load_image_file("madam1.jpg")
+gregorySirPic = fr.load_image_file("Gregory-PT.jpg")
+beenaMamPic = fr.load_image_file("Beena Stephen - X B.JPG")
+deviMamPic = fr.load_image_file("Devi T N.JPG")
+yogaSir= fr.load_image_file("jayaraman.JPG")
+csMamPic = fr.load_image_file("Manjula.JPG")
+csSirPic = fr.load_image_file("Mujibullah.JPG")
+nagammalMamPic = fr.load_image_file("Nagammal R X C.JPG")
+phySirPic = fr.load_image_file("Rajendran.JPG")
+engMamPic = fr.load_image_file("Sandra Nigli - VII C.JPG")
+tamilMamPic = fr.load_image_file("Saraswathi L Tamil Teacher.JPG")
+sheejaMamPic = fr.load_image_file("Sheeja.JPG")
+sivakamiMamPic = fr.load_image_file("Sivakami S - IX A.JPG")
+
 
 myFaceEncodings = fr.face_encodings(myImage)[0]
 mamFaceEncodings = fr.face_encodings(mamImage)[0]
+gregorySirFaceEncodings = fr.face_encodings(gregorySirPic)[0]
+beenaMamFaceEncodings = fr.face_encodings(beenaMamPic)[0]
+deviMamFaceEncodings = fr.face_encodings(deviMamPic)[0]
+yogaSirFaceEncodings = fr.face_encodings(yogaSir)[0]
+csMamFaceEncodings = fr.face_encodings(csMamPic)[0]
+csSirFaceEncodings = fr.face_encodings(csSirPic)[0]
+nagammalMamFaceEncodings = fr.face_encodings(nagammalMamPic)[0]
+phySirFaceEncodings = fr.face_encodings(phySirPic)[0]
+engMamFaceEncodings = fr.face_encodings(engMamPic)[0]
+tamilMamFaceEncodings = fr.face_encodings(tamilMamPic)[0]
+sheejaMamFaceEncodings = fr.face_encodings(sheejaMamPic)[0]
+sivakamiMamFaceEncodings = fr.face_encodings(sivakamiMamPic)[0]
 
-
-known_face_encondings = [myFaceEncodings,mamFaceEncodings]
-known_face_names = ["Bargav","Correspondent mam"]
+known_face_encondings = [myFaceEncodings,mamFaceEncodings,gregorySirFaceEncodings,beenaMamFaceEncodings,deviMamFaceEncodings,yogaSirFaceEncodings,csMamFaceEncodings,csSirFaceEncodings,nagammalMamFaceEncodings,phySirFaceEncodings,engMamFaceEncodings,tamilMamFaceEncodings,sheejaMamFaceEncodings,sivakamiMamFaceEncodings]
+known_face_names = ["Bargav","Correspondent mam","Gregory sir","Beena mam","Devi mam","Jayaraman sir","Manjula mam","Mujibullah sir","Nagammal mam","Rajendran sir","Sandra mam","Saraswathi mam","Sheeja mam","Sivakami mam"]
 
 while True: 
     ret, frame = video_capture.read()
