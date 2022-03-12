@@ -7,7 +7,7 @@ video_capture = cv2.VideoCapture(0)
 
 myImage = fr.load_image_file("myself.jpg")
 mamImage = fr.load_image_file("madam1.jpg")
-gregorySirPic = fr.load_image_file("Gregory-PT.jpg")
+gregorySirPic = fr.load_image_file("Gregory - PT.JPG")
 beenaMamPic = fr.load_image_file("Beena Stephen - X B.JPG")
 deviMamPic = fr.load_image_file("Devi T N.JPG")
 yogaSir= fr.load_image_file("jayaraman.JPG")
