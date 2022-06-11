@@ -5,7 +5,6 @@ import pyttsx3
 
 video_capture = cv2.VideoCapture(0)
 
-myImage = fr.load_image_file("myself.jpg")
 mamImage = fr.load_image_file("madam1.jpg")
 gregorySirPic = fr.load_image_file("Gregory - PT.JPG")
 beenaMamPic = fr.load_image_file("Beena Stephen - X B.JPG")
@@ -20,8 +19,6 @@ tamilMamPic = fr.load_image_file("Saraswathi L Tamil Teacher.JPG")
 sheejaMamPic = fr.load_image_file("Sheeja.JPG")
 sivakamiMamPic = fr.load_image_file("Sivakami S - IX A.JPG")
 
-
-myFaceEncodings = fr.face_encodings(myImage)[0]
 mamFaceEncodings = fr.face_encodings(mamImage)[0]
 gregorySirFaceEncodings = fr.face_encodings(gregorySirPic)[0]
 beenaMamFaceEncodings = fr.face_encodings(beenaMamPic)[0]
@@ -36,8 +33,8 @@ tamilMamFaceEncodings = fr.face_encodings(tamilMamPic)[0]
 sheejaMamFaceEncodings = fr.face_encodings(sheejaMamPic)[0]
 sivakamiMamFaceEncodings = fr.face_encodings(sivakamiMamPic)[0]
 
-known_face_encondings = [myFaceEncodings,mamFaceEncodings,gregorySirFaceEncodings,beenaMamFaceEncodings,deviMamFaceEncodings,yogaSirFaceEncodings,csMamFaceEncodings,csSirFaceEncodings,nagammalMamFaceEncodings,phySirFaceEncodings,engMamFaceEncodings,tamilMamFaceEncodings,sheejaMamFaceEncodings,sivakamiMamFaceEncodings]
-known_face_names = ["Bargav","Correspondent mam","Gregory sir","Beena mam","Devi mam","Jayaraman sir","Manjula mam","Mujibullah sir","Nagammal mam","Rajendran sir","Sandra mam","Saraswathi mam","Sheeja mam","Sivakami mam"]
+known_face_encondings = [mamFaceEncodings,gregorySirFaceEncodings,beenaMamFaceEncodings,deviMamFaceEncodings,yogaSirFaceEncodings,csMamFaceEncodings,csSirFaceEncodings,nagammalMamFaceEncodings,phySirFaceEncodings,engMamFaceEncodings,tamilMamFaceEncodings,sheejaMamFaceEncodings,sivakamiMamFaceEncodings]
+known_face_names = ["Correspondent mam","Gregory sir","Beena mam","Devi mam","Jayaraman sir","Manjula mam","Mujibullah sir","Nagammal mam","Rajendran sir","Sandra mam","Saraswathi mam","Sheeja mam","Sivakami mam"]
 
 while True: 
     ret, frame = video_capture.read()
